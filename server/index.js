@@ -2,15 +2,25 @@ import express from "express";
 import userRoutes from "./routes/userRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
 import attendanceRoutes from "./routes/attendanceRoutes.js";
+import complaintRoutes from "./routes/complaintRoutes.js";
+import feeRoutes from "./routes/feeRoutes.js";
 import path from "path";
 import morgan from "morgan";
 
 import dotenv from "dotenv";
 import connectDB from "./config/mongoDBConfig.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+import cors from "cors";
 dotenv.config();
 connectDB();
 const app = express();
+
+app.use(cors({
+  origin: process.env.NODE_ENV === 'development' 
+    ? 'http://localhost:3000' 
+    : process.env.FRONTEND_URL,
+  credentials: true,
+}));
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
@@ -20,6 +30,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/users", userRoutes);
 app.use("/student", studentRoutes);
 app.use("/attendance", attendanceRoutes);
+app.use("/complaints", complaintRoutes);
+app.use("/fees", feeRoutes);
 
 const __dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {
