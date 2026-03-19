@@ -437,31 +437,6 @@ FRONTEND_URL=http://localhost:3000
 
 ---
 
-## 📸 Screenshots
-
-> *Add your screenshots here after running the project*
-
-| Page | Preview |
-|------|---------|
-| 🔐 Login | *Add screenshot* |
-| 📊 Dashboard | *Add screenshot* |
-| 🏠 Rooms | *Add screenshot* |
-| 👥 Students | *Add screenshot* |
-| 📋 Attendance | *Add screenshot* |
-| 📝 Complaints | *Add screenshot* |
-| 💰 Fee Tracker | *Add screenshot* |
-
-**To add screenshots:**
-1. Take screenshots of each page while running locally
-2. Create a `screenshots/` folder in the repo
-3. Upload images and replace `*Add screenshot*` above with:
-   ```md
-   ![Dashboard](./screenshots/dashboard.png)
-   ```
-
-<br/>
-
----
 
 ## 🗺 Roadmap
 
